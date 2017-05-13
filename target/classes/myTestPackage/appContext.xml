@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="f1" class="food.Fruit"></bean>
+	<bean id="v1" class="food.Vegetable"></bean>
+	<bean id="d1" class="food.Dairy"></bean>
+	<bean id="m1" class="food.Meat"></bean>
+	<bean id="g1" class="food.Grain"></bean>
+
+	<bean id="meal" class="food.Meal">
+		<constructor-arg index="0" ref="f1"></constructor-arg>
+		<constructor-arg index="1" ref="d1"></constructor-arg>
+		<constructor-arg index="2" ref="g1"></constructor-arg>
+		<constructor-arg index="3" ref="m1"></constructor-arg>
+		<constructor-arg index="4" ref="v1"></constructor-arg>
+	</bean>
+	<bean id="mealWithAlt" class="food.Meal">
+		<constructor-arg name="fruit" ref="f1"></constructor-arg>
+		<constructor-arg name="dairy" ref="d1"></constructor-arg>
+		<constructor-arg name="meat" ref="m1"></constructor-arg>
+		<constructor-arg name="veg" ref="v1"></constructor-arg>
+		<constructor-arg name="grain" ref="g1"></constructor-arg>
+	</bean>
+
+
+</beans>
